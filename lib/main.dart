@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
+import 'package:page_transition/page_transition.dart';
 void main() {
   runApp(MyApp());
 }
@@ -11,6 +11,18 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
+
+  void myDecoration () {
+    decoration: BoxDecoration(
+      color: Colors.white,
+      borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+          bottomLeft: Radius.circular(20),
+          bottomRight: Radius.circular(20)
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -100,89 +112,162 @@ class _MyAppState extends State<MyApp> {
                 ),
                 Column(
                   children: <Widget>[
-                    Container(
-                      width: 250,
-                      height: 320,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(20),
-                            topRight: Radius.circular(20),
-                            bottomLeft: Radius.circular(20),
-                            bottomRight: Radius.circular(20)
-                        ),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(left: 15, top: 20),
-                            child: CircleAvatar(
-                              backgroundColor: Colors.white,
-                              child: Icon(
-                                Icons.person,
-                                color: Colors.orangeAccent,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 110,
-                          ),
-                          Row(
+                    Row(
+                      children: <Widget>[
+                        Container(
+                  width: 250,
+                          height: 320,
+                          decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(20))),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               Padding(
-                                padding: const EdgeInsets.only(left: 15),
-                                child: Icon(
-                                    Icons.location_on
+                                padding: const EdgeInsets.only(left: 15, top: 20),
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Icon(
+                                    Icons.person,
+                                    color: Colors.orangeAccent,
+                                  ),
                                 ),
                               ),
                               SizedBox(
-                                width: 3,
+                                height: 110,
                               ),
-                              Text(
-                                ('Tasks'),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: 5,
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20),
-                            child: Text(
-                              'Personal',
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 30,
-                              ),
-                            ),
-                          ),
-                          SizedBox(
-                            height: 30,
-                          ),
-                          Row(
-                            children: <Widget>[
-                              Container(
-                                margin: EdgeInsets.only(left: 10),
-                                height: 3,
-                                width: 140,
-                                color: Colors.orangeAccent,
-                              ),
-                              Container(
-                                height: 3,
-                                width: 30,
-                                color: Colors.black12,
+                              Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 15),
+                                    child: Icon(
+                                        Icons.location_on
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 3,
+                                  ),
+                                  Text(
+                                    ('Tasks'),
+                                  ),
+                                ],
                               ),
                               SizedBox(
-                                width: 35,
+                                height: 5,
                               ),
-                              Text(
-                                '80%',
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Text(
+                                  'Personal',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.only(left: 10),
+                                    height: 3,
+                                    width: 140,
+                                    color: Colors.orangeAccent,
+                                  ),
+                                  Container(
+                                    height: 3,
+                                    width: 30,
+                                    color: Colors.black12,
+                                  ),
+                                  SizedBox(
+                                    width: 35,
+                                  ),
+                                  Text(
+                                    '80%',
+                                  ),
+                                ],
                               ),
                             ],
                           ),
-                        ],
-                      ),
+                        ),
+                        SizedBox(width: 10,),
+                        Container(
+                          width: 100,
+                          height: 320,
+                          decoration: BoxDecoration(color: Colors.white,borderRadius: BorderRadius.all(Radius.circular(20))),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(left: 15, top: 20),
+                                child: CircleAvatar(
+                                  backgroundColor: Colors.white,
+                                  child: Icon(
+                                    Icons.person,
+                                    color: Colors.orangeAccent,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 110,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.only(left: 15),
+                                    child: Icon(
+                                        Icons.location_on
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 3,
+                                  ),
+                                  Text(
+                                    ('Tasks'),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Text(
+                                  'Personal',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                  ),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Container(
+                                    margin: EdgeInsets.only(left: 10),
+                                    height: 3,
+                                    width: 40,
+                                    color: Colors.orangeAccent,
+                                  ),
+                                  Container(
+                                    height: 3,
+                                    width: 30,
+                                    color: Colors.black12,
+                                  ),
+                                  SizedBox(
+                                    width: 5,
+                                  ),
+                                  Text(
+                                    '',
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),
