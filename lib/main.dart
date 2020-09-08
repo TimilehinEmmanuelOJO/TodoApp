@@ -209,7 +209,7 @@ class _MyAppState extends State<MyApp> {
                                 ),
                               ),
                               SizedBox(
-                                height: 110,
+                                height: 75,
                               ),
                               Row(
                                 children: <Widget>[
